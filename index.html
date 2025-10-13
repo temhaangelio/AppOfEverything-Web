@@ -79,84 +79,55 @@
   >
     <!-- Navigation -->
     <nav
-      class="fixed w-full top-0 z-50 backdrop-blur-md border-b"
-      style="background-color: rgba(0, 0, 0, 0.95); border-color: var(--renk2)"
+      id="main-nav"
+      class="fixed w-full top-0 z-50 backdrop-blur-md nav-bar"
+      style="border-color: var(--renk2)"
     >
       <div class="container mx-auto py-4 px-4 md:px-0">
         <div class="flex items-center justify-between">
           <div class="flex items-center space-x-3">
             <img
-              src="assets/images/logo-dark.png"
+              src="assets/images/logo.png"
               alt="AppOfEverything Logo"
-              class="h-10 w-10"
+              class="h-10 w-10 logo-img"
             />
-            <span class="text-xl font-bold" style="color: var(--renk3)"
-              >AppOfEverything</span
-            >
+            <span class="text-lg font-bold brand-name">AppOfEverything</span>
           </div>
 
           <div class="hidden md:flex space-x-8">
-            <a
-              href="#home"
-              class="nav-link transition"
-              style="color: var(--renk3)"
-              onmouseover="this.style.color='var(--renk5)'"
-              onmouseout="this.style.color='var(--renk3)'"
-              >Home</a
-            >
-            <a
-              href="#about"
-              class="nav-link transition"
-              style="color: var(--renk3)"
-              onmouseover="this.style.color='var(--renk5)'"
-              onmouseout="this.style.color='var(--renk3)'"
-              >About</a
-            >
-            <a
-              href="#features"
-              class="nav-link transition"
-              style="color: var(--renk3)"
-              onmouseover="this.style.color='var(--renk5)'"
-              onmouseout="this.style.color='var(--renk3)'"
-              >Features</a
-            >
+            <a href="#home" class="nav-link transition">Home</a>
+            <a href="#about" class="nav-link transition">About</a>
+            <a href="#features" class="nav-link transition">Features</a>
+            <a href="#privacy" class="nav-link transition">Privacy</a>
+            <a href="#roadmap" class="nav-link transition">Roadmap</a>
           </div>
 
-          <!-- Mobile Menu Button -->
-          <button id="mobile-menu-btn" class="md:hidden">
+          <!-- Dark Mode Toggle -->
+          <button
+            id="theme-toggle"
+            class="theme-toggle-btn p-2 transition-all"
+            aria-label="Toggle dark mode"
+          >
             <ion-icon
-              name="menu-outline"
-              style="font-size: 28px; color: var(--renk3)"
+              id="theme-icon"
+              name="moon-outline"
+              style="font-size: 24px"
             ></ion-icon>
+          </button>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden ml-2">
+            <ion-icon name="menu-outline" style="font-size: 28px"></ion-icon>
           </button>
         </div>
 
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden pt-4 pb-2 space-y-3">
-          <a
-            href="#home"
-            class="nav-link block transition"
-            style="color: var(--renk3)"
-            onmouseover="this.style.color='var(--renk5)'"
-            onmouseout="this.style.color='var(--renk3)'"
-            >Home</a
-          >
-          <a
-            href="#about"
-            class="nav-link block transition"
-            style="color: var(--renk3)"
-            onmouseover="this.style.color='var(--renk5)'"
-            onmouseout="this.style.color='var(--renk3)'"
-            >About</a
-          >
-          <a
-            href="#features"
-            class="nav-link block transition"
-            style="color: var(--renk3)"
-            onmouseover="this.style.color='var(--renk5)'"
-            onmouseout="this.style.color='var(--renk3)'"
-            >Features</a
-          >
+          <a href="#home" class="nav-link block transition">Home</a>
+          <a href="#about" class="nav-link block transition">About</a>
+          <a href="#features" class="nav-link block transition">Features</a>
+          <a href="#privacy" class="nav-link block transition">Privacy</a>
+          <a href="#roadmap" class="nav-link block transition">Roadmap</a>
         </div>
       </div>
     </nav>
@@ -172,21 +143,21 @@
         >
           <div class="space-y-6">
             <h1
-              class="text-5xl md:text-6xl font-bold leading-tight"
+              class="text-4xl md:text-6xl font-bold leading-tight"
               style="color: var(--renk1)"
             >
               Everything
               <span class="gradient-text">All in One</span>
             </h1>
 
-            <p class="text-lg" style="color: var(--renk2)">
+            <p class="text-2xl" style="color: var(--renk2)">
               All the tools you need in your pocket with AppOfEverything!
               Discover infinite possibilities with a single app.
             </p>
 
-            <div>
+            <div class="flex flex-col md:flex-row gap-4">
               <button
-                class="px-8 py-4 w-full rounded-full font-medium transition flex items-center justify-center gap-2"
+                class="apple-download-btn px-8 py-4 rounded-full font-medium transition flex items-center justify-center gap-2"
                 style="
                   background-color: var(--renk1);
                   color: var(--renk3);
@@ -196,7 +167,12 @@
                 disabled
               >
                 <ion-icon name="logo-apple" style="font-size: 44px"></ion-icon>
-                Download on App Store (Coming Soon)
+                <div class="flex flex-col items-center gap-0">
+                  <span>Download on App Store</span>
+                  <span style="color: var(--renk2)" class="text-xs">
+                    (Coming Soon)</span
+                  >
+                </div>
               </button>
             </div>
           </div>
@@ -377,6 +353,311 @@
       </div>
     </section>
 
+    <!-- Privacy Section -->
+    <section
+      id="privacy"
+      class="min-h-screen flex items-center py-20 px-6 border-b border-gray-300"
+      style="background-color: var(--renk4)"
+    >
+      <div class="container mx-auto">
+        <div class="max-w-4xl mx-auto text-center">
+          <div
+            class="inline-flex items-center justify-center w-20 h-20 rounded-full mb-6"
+            style="
+              background-color: var(--renk3);
+              box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <ion-icon
+              name="shield-checkmark"
+              style="font-size: 48px; color: var(--renk1)"
+            ></ion-icon>
+          </div>
+
+          <h2
+            class="text-4xl md:text-5xl font-bold mb-6"
+            style="color: var(--renk1)"
+          >
+            Your Privacy is Our Priority
+          </h2>
+
+          <p
+            class="text-xl md:text-2xl mb-8 leading-relaxed"
+            style="color: var(--renk2)"
+          >
+            Your data is securely encrypted and stored in a secure cloud
+            infrastructure. Only you can access your personal data. We don't
+            collect or track any data - your privacy is our guarantee. We never
+            share or sell your information to third parties.
+          </p>
+
+          <div class="grid md:grid-cols-3 gap-8 mt-12">
+            <div class="privacy-feature">
+              <div
+                class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                style="
+                  background-color: var(--renk3);
+                  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+                "
+              >
+                <ion-icon
+                  name="lock-closed"
+                  style="font-size: 32px; color: var(--renk1)"
+                ></ion-icon>
+              </div>
+              <h3 class="text-xl font-bold mb-2" style="color: var(--renk1)">
+                Encrypted Security
+              </h3>
+              <p style="color: var(--renk2)">
+                Your data is protected with end-to-end encryption in the cloud
+              </p>
+            </div>
+
+            <div class="privacy-feature">
+              <div
+                class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                style="
+                  background-color: var(--renk3);
+                  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+                "
+              >
+                <ion-icon
+                  name="eye-off"
+                  style="font-size: 32px; color: var(--renk1)"
+                ></ion-icon>
+              </div>
+              <h3 class="text-xl font-bold mb-2" style="color: var(--renk1)">
+                Zero Tracking
+              </h3>
+              <p style="color: var(--renk2)">
+                No usage data, analytics, or ad tracking whatsoever
+              </p>
+            </div>
+
+            <div class="privacy-feature">
+              <div
+                class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                style="
+                  background-color: var(--renk3);
+                  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+                "
+              >
+                <ion-icon
+                  name="shield-checkmark"
+                  style="font-size: 32px; color: var(--renk1)"
+                ></ion-icon>
+              </div>
+              <h3 class="text-xl font-bold mb-2" style="color: var(--renk1)">
+                Yours, Not Ours
+              </h3>
+              <p style="color: var(--renk2)">
+                Only you can access your data, never shared with anyone
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section
+      id="roadmap"
+      class="min-h-screen flex items-center py-20 px-6"
+      style="background-color: var(--renk3)"
+    >
+      <!-- Dekoratif Daireler -->
+      <div class="daire daire-1"></div>
+      <div class="daire daire-2"></div>
+      <div class="daire daire-3"></div>
+      <div class="daire daire-4"></div>
+      <div class="daire daire-5"></div>
+      <div class="daire daire-6"></div>
+      <div class="daire daire-7"></div>
+      <div class="daire daire-8"></div>
+      <div class="daire daire-9"></div>
+      <div class="daire daire-10"></div>
+      <div class="daire daire-11"></div>
+      <div class="daire daire-12"></div>
+
+      <div class="container mx-auto">
+        <h2
+          class="text-4xl md:text-5xl font-bold mb-4 text-center"
+          style="color: var(--renk1)"
+        >
+          Roadmap
+        </h2>
+        <p
+          class="text-xl text-center mb-16 max-w-2xl mx-auto"
+          style="color: var(--renk2)"
+        >
+          Our vision for the future of AppOfEverything
+        </p>
+
+        <div class="max-w-5xl mx-auto">
+          <!-- Timeline -->
+          <div class="relative">
+            <!-- Timeline Line -->
+            <div
+              class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 hidden md:block timeline-line"
+              style="background-color: var(--renk5)"
+            ></div>
+
+            <!-- Q1 2025 -->
+            <div class="roadmap-item mb-16 md:grid md:grid-cols-2 md:gap-8">
+              <div class="md:text-right md:pr-12 mb-8 md:mb-0">
+                <div
+                  class="inline-block px-6 py-2 rounded-full mb-4"
+                  style="background-color: var(--renk1)"
+                >
+                  <span class="font-bold" style="color: var(--renk3)"
+                    >Q1 2025</span
+                  >
+                </div>
+                <h3 class="text-2xl font-bold mb-3" style="color: var(--renk1)">
+                  Development Phase
+                </h3>
+                <p style="color: var(--renk2)">
+                  Core development of essential features: Task Management, Habit
+                  Tracking, Shopping List, and Budget Tracking with modern UI.
+                </p>
+              </div>
+              <div class="hidden md:flex items-center justify-center">
+                <div
+                  class="w-6 h-6 rounded-full border-4 timeline-dot"
+                  style="
+                    background-color: var(--renk1);
+                    border-color: var(--renk3);
+                  "
+                ></div>
+              </div>
+            </div>
+
+            <!-- Q2 2025 -->
+            <div class="roadmap-item mb-16 md:grid md:grid-cols-2 md:gap-8">
+              <div class="hidden md:flex items-center justify-center">
+                <div
+                  class="w-6 h-6 rounded-full border-4 timeline-dot"
+                  style="
+                    background-color: var(--renk2);
+                    border-color: var(--renk3);
+                  "
+                ></div>
+              </div>
+              <div class="md:pl-12">
+                <div
+                  class="inline-block px-6 py-2 rounded-full mb-4"
+                  style="background-color: var(--renk2)"
+                >
+                  <span class="font-bold" style="color: var(--renk3)"
+                    >Q2 2025</span
+                  >
+                </div>
+                <h3 class="text-2xl font-bold mb-3" style="color: var(--renk1)">
+                  Testing & Refinement
+                </h3>
+                <p style="color: var(--renk2)">
+                  Beta testing phase, bug fixes, performance optimization, and
+                  UI/UX improvements based on user feedback.
+                </p>
+              </div>
+            </div>
+
+            <!-- Q3 2025 -->
+            <div class="roadmap-item mb-16 md:grid md:grid-cols-2 md:gap-8">
+              <div class="md:text-right md:pr-12 mb-8 md:mb-0">
+                <div
+                  class="inline-block px-6 py-2 rounded-full mb-4"
+                  style="background-color: var(--renk2)"
+                >
+                  <span class="font-bold" style="color: var(--renk3)"
+                    >Q3 2025</span
+                  >
+                </div>
+                <h3 class="text-2xl font-bold mb-3" style="color: var(--renk1)">
+                  Pre-Launch Preparation
+                </h3>
+                <p style="color: var(--renk2)">
+                  Final testing, App Store optimization, marketing materials,
+                  user documentation, and launch campaign preparation.
+                </p>
+              </div>
+              <div class="hidden md:flex items-center justify-center">
+                <div
+                  class="w-6 h-6 rounded-full border-4 timeline-dot"
+                  style="
+                    background-color: var(--renk2);
+                    border-color: var(--renk3);
+                  "
+                ></div>
+              </div>
+            </div>
+
+            <!-- Q4 2025 -->
+            <div class="roadmap-item mb-16 md:grid md:grid-cols-2 md:gap-8">
+              <div class="hidden md:flex items-center justify-center">
+                <div
+                  class="w-6 h-6 rounded-full border-4 timeline-dot"
+                  style="
+                    background-color: var(--renk5);
+                    border-color: var(--renk3);
+                  "
+                ></div>
+              </div>
+              <div class="md:pl-12">
+                <div
+                  class="inline-block px-6 py-2 rounded-full mb-4"
+                  style="background-color: var(--renk5)"
+                >
+                  <span class="font-bold" style="color: var(--renk1)"
+                    >Q4 2025</span
+                  >
+                </div>
+                <h3 class="text-2xl font-bold mb-3" style="color: var(--renk1)">
+                  Official Launch 🚀
+                </h3>
+                <p style="color: var(--renk2)">
+                  Official release on App Store with full features: Task
+                  Management, Habit Tracking, Shopping List, and Budget
+                  Tracking. Your all-in-one productivity companion is here!
+                </p>
+              </div>
+            </div>
+
+            <!-- 2026+ -->
+            <div class="roadmap-item md:grid md:grid-cols-2 md:gap-8">
+              <div class="md:text-right md:pr-12 mb-8 md:mb-0">
+                <div
+                  class="inline-block px-6 py-2 rounded-full mb-4"
+                  style="background-color: var(--renk5)"
+                >
+                  <span class="font-bold" style="color: var(--renk1)"
+                    >2026 & Beyond</span
+                  >
+                </div>
+                <h3 class="text-2xl font-bold mb-3" style="color: var(--renk1)">
+                  Platform Expansion
+                </h3>
+                <p style="color: var(--renk2)">
+                  New features, AI integration, Android version, web platform,
+                  widgets, collaboration tools, and multi-language support for
+                  global reach.
+                </p>
+              </div>
+              <div class="hidden md:flex items-center justify-center">
+                <div
+                  class="w-6 h-6 rounded-full border-4 timeline-dot"
+                  style="
+                    background-color: var(--renk5);
+                    border-color: var(--renk3);
+                  "
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer
       class="py-8 px-6 border-t"
@@ -425,6 +706,44 @@
     </button>
 
     <script>
+      // Dark Mode Toggle
+      const themeToggle = document.getElementById("theme-toggle");
+      const themeIcon = document.getElementById("theme-icon");
+      const htmlElement = document.documentElement;
+      const logoImg = document.querySelector(".logo-img");
+
+      // Check for saved theme preference or default to light mode
+      const currentTheme = localStorage.getItem("theme") || "light";
+      htmlElement.setAttribute("data-theme", currentTheme);
+      updateThemeIcon(currentTheme);
+      updateLogo(currentTheme);
+
+      themeToggle.addEventListener("click", () => {
+        const currentTheme = htmlElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+
+        htmlElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        updateThemeIcon(newTheme);
+        updateLogo(newTheme);
+      });
+
+      function updateThemeIcon(theme) {
+        if (theme === "dark") {
+          themeIcon.setAttribute("name", "sunny-outline");
+        } else {
+          themeIcon.setAttribute("name", "moon-outline");
+        }
+      }
+
+      function updateLogo(theme) {
+        if (theme === "dark") {
+          logoImg.src = "assets/images/logo-dark.png";
+        } else {
+          logoImg.src = "assets/images/logo.png";
+        }
+      }
+
       // Mobile Menu Toggle
       const mobileMenuBtn = document.getElementById("mobile-menu-btn");
       const mobileMenu = document.getElementById("mobile-menu");
@@ -494,6 +813,33 @@
         card.style.transform = "translateY(50px)";
         card.style.transition = `all 0.6s ease ${index * 0.1}s`;
         observer.observe(card);
+      });
+
+      // Observe privacy features
+      document
+        .querySelectorAll(".privacy-feature")
+        .forEach((feature, index) => {
+          feature.style.opacity = "0";
+          feature.style.transform = "translateY(30px)";
+          feature.style.transition = `all 0.6s ease ${index * 0.15}s`;
+          observer.observe(feature);
+        });
+
+      // Observe roadmap items
+      document.querySelectorAll(".roadmap-item").forEach((item, index) => {
+        item.style.opacity = "0";
+        item.style.transform = "translateX(-50px)";
+        item.style.transition = `all 0.8s ease ${index * 0.2}s`;
+        observer.observe(item);
+      });
+
+      // Add staggered animation delays to timeline dots
+      document.querySelectorAll(".timeline-dot").forEach((dot, index) => {
+        dot.style.animationDelay = `${index * 0.3}s`;
+        if (dot.querySelector) {
+          const before = window.getComputedStyle(dot, "::before");
+          dot.style.setProperty("--ripple-delay", `${index * 0.3}s`);
+        }
       });
 
       // Video Modal

@@ -7,6 +7,19 @@
   --placeholder: #999999;
 }
 
+[data-theme="dark"] {
+  --renk1: #ffffff;
+  --renk2: #b0b0b0;
+  --renk3: #1a1a1a;
+  --renk4: #0f0f0f;
+  --renk5: #2a2a2a;
+  --placeholder: #666666;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 * {
   font-family: "Poppins", sans-serif;
 }
@@ -83,6 +96,18 @@
   transform: translateY(-10px);
 }
 
+.privacy-feature {
+  transition: all 0.3s ease;
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.privacy-feature:hover {
+  transform: translateY(-5px);
+  background-color: var(--renk3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -122,6 +147,7 @@ html {
     rgba(0, 0, 0, 0) 100%
   );
   pointer-events: none;
+  z-index: 0;
 }
 
 input::placeholder,
@@ -132,16 +158,126 @@ textarea::placeholder {
 .nav-link {
   padding: 8px 16px;
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.05);
   transition: all 0.3s ease;
+  color: var(--renk1) !important;
 }
 
 .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-2px);
+  color: var(--renk1) !important;
 }
 
-#hakkinda {
+[data-theme="dark"] .nav-link {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .nav-link:hover {
+  color: #ffffff !important;
+}
+
+.apple-download-btn {
+  border: 2px solid transparent;
+}
+
+[data-theme="dark"] .apple-download-btn {
+  background-color: var(--renk3) !important;
+  color: var(--renk1) !important;
+  border-color: var(--renk1) !important;
+}
+
+.theme-toggle-btn {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.theme-toggle-btn ion-icon {
+  color: #000000;
+}
+
+[data-theme="dark"] .theme-toggle-btn ion-icon {
+  color: #ffffff;
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.1);
+  background-color: transparent !important;
+}
+
+/* Mobile menu button */
+#mobile-menu-btn ion-icon {
+  color: #000000;
+}
+
+[data-theme="dark"] #mobile-menu-btn ion-icon {
+  color: #ffffff;
+}
+
+/* Icon colors for dark mode */
+[data-theme="dark"] nav ion-icon {
+  color: #ffffff !important;
+}
+
+/* Navigation bar styles */
+.nav-bar {
+  background-color: rgba(230, 230, 230, 0.95);
+  transition: background-color 0.3s ease;
+}
+
+[data-theme="dark"] .nav-bar {
+  background-color: rgba(26, 26, 26, 0.95);
+}
+
+/* Brand and logo styles */
+.brand-name {
+  color: var(--renk1);
+  transition: color 0.3s ease;
+}
+
+[data-theme="dark"] .brand-name {
+  color: #ffffff !important;
+}
+
+.logo-img {
+  transition: opacity 0.3s ease;
+}
+
+[data-theme="dark"] .feature-card {
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .gradient-bg {
+  background: var(--renk5);
+}
+
+section {
+  transition: background-color 0.3s ease;
+}
+
+[data-theme="dark"] .border-gray-300 {
+  border-color: #333333 !important;
+}
+
+[data-theme="dark"] nav.border-b {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Footer styles */
+footer {
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] footer {
+  background-color: var(--renk3) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] footer .container {
+  color: var(--renk1) !important;
+}
+
+#about,
+#roadmap {
   position: relative;
   overflow: hidden;
 }
@@ -154,7 +290,8 @@ textarea::placeholder {
   z-index: 0;
 }
 
-#hakkinda .container {
+#about .container,
+#roadmap .container {
   position: relative;
   z-index: 1;
 }
@@ -253,4 +390,88 @@ textarea::placeholder {
   top: 45%;
   left: 8%;
   opacity: 0.16;
+}
+
+/* Roadmap Styles */
+.roadmap-item {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.timeline-dot {
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 10;
+  position: relative;
+  animation: pulse-dot 3s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+}
+
+.timeline-dot::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: inherit;
+  opacity: 0;
+  animation: ripple 3s ease-out infinite;
+  animation-delay: inherit;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.roadmap-item:hover .timeline-dot {
+  transform: scale(1.6) rotate(360deg);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  animation: none;
+}
+
+[data-theme="dark"] .roadmap-item:hover .timeline-dot {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.timeline-line {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(to bottom, var(--renk1), var(--renk2));
+  animation: fillTimeline 2s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fillTimeline {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
 }
