@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <title>AppOfEverything - All in One</title>
+    <meta
+      name="description"
+      content="Everything you need in your pocket with AppOfEverything! One app, infinite possibilities. Download now and explore."
+    />
+    <meta
+      name="keywords"
+      content="mobile app, all in one, everything together, app, application"
+    />
+    <meta name="author" content="AppOfEverything" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://appofeverything.vercel.app/" />
+    <meta property="og:title" content="AppOfEverything - All in One" />
+    <meta
+      property="og:description"
+      content="Everything you need in your pocket with AppOfEverything! One app, infinite possibilities."
+    />
+    <meta
+      property="og:image"
+      content="https://appofeverything.vercel.app/og-image.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://appofeverything.vercel.app/"
+    />
+    <meta property="twitter:title" content="AppOfEverything - All in One" />
+    <meta
+      property="twitter:description"
+      content="Everything you need in your pocket with AppOfEverything! One app, infinite possibilities."
+    />
+    <meta
+      property="twitter:image"
+      content="https://appofeverything.vercel.app/og-image.jpg"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Ionicons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="overflow-x-hidden"
+    style="background-color: var(--renk4); color: var(--renk1)"
+  >
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full top-0 z-50 backdrop-blur-md border-b"
+      style="background-color: rgba(0, 0, 0, 0.95); border-color: var(--renk2)"
+    >
+      <div class="container mx-auto py-4 px-4 md:px-0">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <img
+              src="assets/images/logo-dark.png"
+              alt="AppOfEverything Logo"
+              class="h-10 w-10"
+            />
+            <span class="text-xl font-bold" style="color: var(--renk3)"
+              >AppOfEverything</span
+            >
+          </div>
+
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#home"
+              class="nav-link transition"
+              style="color: var(--renk3)"
+              onmouseover="this.style.color='var(--renk5)'"
+              onmouseout="this.style.color='var(--renk3)'"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="nav-link transition"
+              style="color: var(--renk3)"
+              onmouseover="this.style.color='var(--renk5)'"
+              onmouseout="this.style.color='var(--renk3)'"
+              >About</a
+            >
+            <a
+              href="#features"
+              class="nav-link transition"
+              style="color: var(--renk3)"
+              onmouseover="this.style.color='var(--renk5)'"
+              onmouseout="this.style.color='var(--renk3)'"
+              >Features</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden">
+            <ion-icon
+              name="menu-outline"
+              style="font-size: 28px; color: var(--renk3)"
+            ></ion-icon>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden pt-4 pb-2 space-y-3">
+          <a
+            href="#home"
+            class="nav-link block transition"
+            style="color: var(--renk3)"
+            onmouseover="this.style.color='var(--renk5)'"
+            onmouseout="this.style.color='var(--renk3)'"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="nav-link block transition"
+            style="color: var(--renk3)"
+            onmouseover="this.style.color='var(--renk5)'"
+            onmouseout="this.style.color='var(--renk3)'"
+            >About</a
+          >
+          <a
+            href="#features"
+            class="nav-link block transition"
+            style="color: var(--renk3)"
+            onmouseover="this.style.color='var(--renk5)'"
+            onmouseout="this.style.color='var(--renk3)'"
+            >Features</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="pt-32 pb-20 px-6 hero-gradient min-h-screen flex items-center border-b border-gray-300"
+    >
+      <div class="container mx-auto" style="position: relative; z-index: 1">
+        <div
+          class="flex flex-col-reverse md:grid md:grid-cols-2 gap-12 items-center"
+        >
+          <div class="space-y-6">
+            <h1
+              class="text-5xl md:text-6xl font-bold leading-tight"
+              style="color: var(--renk1)"
+            >
+              Everything
+              <span class="gradient-text">All in One</span>
+            </h1>
+
+            <p class="text-lg" style="color: var(--renk2)">
+              All the tools you need in your pocket with AppOfEverything!
+              Discover infinite possibilities with a single app.
+            </p>
+
+            <div>
+              <button
+                class="px-8 py-4 w-full rounded-full font-medium transition flex items-center justify-center gap-2"
+                style="
+                  background-color: var(--renk1);
+                  color: var(--renk3);
+                  opacity: 0.7;
+                  cursor: not-allowed;
+                "
+                disabled
+              >
+                <ion-icon name="logo-apple" style="font-size: 44px"></ion-icon>
+                Download on App Store (Coming Soon)
+              </button>
+            </div>
+          </div>
+
+          <div class="flex justify-end">
+            <div class="relative cursor-pointer" id="video-trigger">
+              <div
+                class="absolute inset-0 blur-3xl opacity-30 animate-float"
+                style="background-color: var(--renk2)"
+              ></div>
+              <div class="relative">
+                <img
+                  src="assets/images/phone.png"
+                  alt="AppOfEverything App Preview"
+                  class="w-full h-auto max-w-md"
+                />
+                <!-- Play Button -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div
+                    class="w-20 h-20 rounded-full flex items-center justify-center transition-all hover:scale-110"
+                    style="background-color: rgba(0, 0, 0, 0.7)"
+                  >
+                    <ion-icon
+                      name="play"
+                      style="font-size: 40px; color: white; margin-left: 4px"
+                    ></ion-icon>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section
+      id="about"
+      class="min-h-screen flex items-center py-20 px-6 border-b border-gray-300"
+      style="background-color: var(--renk3)"
+    >
+      <!-- Dekoratif Daireler -->
+      <div class="daire daire-1"></div>
+      <div class="daire daire-2"></div>
+      <div class="daire daire-3"></div>
+      <div class="daire daire-4"></div>
+      <div class="daire daire-5"></div>
+      <div class="daire daire-6"></div>
+      <div class="daire daire-7"></div>
+      <div class="daire daire-8"></div>
+      <div class="daire daire-9"></div>
+      <div class="daire daire-10"></div>
+      <div class="daire daire-11"></div>
+      <div class="daire daire-12"></div>
+
+      <div class="container mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="flex justify-center">
+            <img
+              src="assets/images/gorsel0.png"
+              alt="AppOfEverything About Image"
+              class="w-full h-auto max-w-lg"
+            />
+          </div>
+          <div>
+            <h2
+              class="text-4xl md:text-5xl font-bold mb-8"
+              style="color: var(--renk1)"
+            >
+              About
+            </h2>
+            <div class="space-y-6" style="color: var(--renk2)">
+              <p class="text-xl">
+                <strong style="color: var(--renk1)">AppOfEverything</strong>
+                is a comprehensive and user-friendly mobile application designed
+                to simplify your daily life. We bring together all the tools you
+                need in one place, from task management to habit tracking,
+                budget control to shopping lists.
+              </p>
+              <p class="text-lg">
+                With its minimalist and elegant design, our app offers maximum
+                efficiency without complexity, providing the easiest way to
+                organize your life. Every feature has been carefully developed
+                with user experience at the forefront.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="min-h-screen flex items-center py-20 px-6">
+      <div class="container mx-auto">
+        <h2
+          class="text-4xl md:text-5xl font-bold mb-12 text-center"
+          style="color: var(--renk1)"
+        >
+          Features
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Task Management -->
+          <div
+            class="feature-card flex items-center aling-center p-8 rounded-2xl border"
+            style="background-color: var(--renk3); border-color: var(--renk5)"
+          >
+            <div class="mt-6 mr-10">
+              <img src="assets/images/gorsel1.png" alt="Task Management" />
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold mb-3" style="color: var(--renk1)">
+                Task Management
+              </h3>
+              <p style="color: var(--renk2)">
+                Create tasks, set alarms, and complete them. View your past
+                tasks in a separate section.
+              </p>
+            </div>
+          </div>
+
+          <!-- Habit Tracking -->
+          <div
+            class="feature-card flex items-center aling-center p-8 rounded-2xl border"
+            style="background-color: var(--renk3); border-color: var(--renk5)"
+          >
+            <div class="mt-6 mr-10">
+              <img src="assets/images/gorsel2.png" alt="Habit Tracking" />
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold mb-3" style="color: var(--renk1)">
+                Habit Tracking
+              </h3>
+              <p style="color: var(--renk2)">
+                Track your daily habits. Choose which days to do them, set daily
+                goals, and see your progress on the calendar.
+              </p>
+            </div>
+          </div>
+
+          <!-- Shopping List -->
+          <div
+            class="feature-card flex items-center aling-center p-8 rounded-2xl border"
+            style="background-color: var(--renk3); border-color: var(--renk5)"
+          >
+            <div class="mt-6 mr-10">
+              <img src="assets/images/gorsel3.png" alt="Shopping List" />
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold mb-3" style="color: var(--renk1)">
+                Shopping List
+              </h3>
+              <p style="color: var(--renk2)">
+                Add your shopping items, specify quantities and units. Mark
+                items you've purchased.
+              </p>
+            </div>
+          </div>
+
+          <!-- Budget Tracking -->
+          <div
+            class="feature-card flex items-center aling-center p-8 rounded-2xl border"
+            style="background-color: var(--renk3); border-color: var(--renk5)"
+          >
+            <div class="mt-6 mr-10">
+              <img src="assets/images/gorsel4.png" alt="Budget Tracking" />
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold mb-3" style="color: var(--renk1)">
+                Budget Tracking
+              </h3>
+              <p style="color: var(--renk2)">
+                Record your income and expenses. View your financial status on a
+                daily, weekly, monthly, or yearly basis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="py-8 px-6 border-t"
+      style="border-color: var(--renk2); background-color: var(--renk1)"
+    >
+      <div class="container mx-auto text-center" style="color: var(--renk3)">
+        <p>&copy; 2025 AppOfEverything. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div
+      id="video-modal"
+      class="fixed inset-0 z-50 flex items-center justify-center hidden"
+      style="background-color: rgba(0, 0, 0, 0.9)"
+    >
+      <div class="relative w-full max-w-4xl mx-4">
+        <button
+          id="close-modal"
+          class="absolute -top-12 right-0 text-white hover:opacity-70 transition"
+        >
+          <ion-icon name="close" style="font-size: 40px"></ion-icon>
+        </button>
+        <div class="relative" style="padding-bottom: 56.25%">
+          <video
+            id="video-player"
+            class="absolute inset-0 w-full h-full"
+            controls
+          >
+            <source src="assets/video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button
+      id="scroll-top"
+      class="fixed bottom-8 right-8 w-12 h-12 gradient-bg rounded-full flex items-center justify-center opacity-0 pointer-events-none transition-all hover:scale-110"
+    >
+      <ion-icon
+        name="arrow-up-outline"
+        style="font-size: 24px; color: var(--renk3)"
+      ></ion-icon>
+    </button>
+
+    <script>
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu when clicking a link
+      const mobileLinks = mobileMenu.querySelectorAll("a");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // Scroll to Top Button
+      const scrollTopBtn = document.getElementById("scroll-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 500) {
+          scrollTopBtn.classList.remove("opacity-0", "pointer-events-none");
+        } else {
+          scrollTopBtn.classList.add("opacity-0", "pointer-events-none");
+        }
+      });
+
+      scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Smooth Scroll for Navigation Links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Add animation on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      // Observe feature cards
+      document.querySelectorAll(".feature-card").forEach((card, index) => {
+        card.style.opacity = "0";
+        card.style.transform = "translateY(50px)";
+        card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+        observer.observe(card);
+      });
+
+      // Video Modal
+      const videoTrigger = document.getElementById("video-trigger");
+      const videoModal = document.getElementById("video-modal");
+      const closeModal = document.getElementById("close-modal");
+      const videoPlayer = document.getElementById("video-player");
+
+      videoTrigger.addEventListener("click", () => {
+        videoModal.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      });
+
+      closeModal.addEventListener("click", () => {
+        videoModal.classList.add("hidden");
+        videoPlayer.pause();
+        videoPlayer.currentTime = 0;
+        document.body.style.overflow = "auto";
+      });
+
+      // Close modal when clicking outside
+      videoModal.addEventListener("click", (e) => {
+        if (e.target === videoModal) {
+          videoModal.classList.add("hidden");
+          videoPlayer.pause();
+          videoPlayer.currentTime = 0;
+          document.body.style.overflow = "auto";
+        }
+      });
+
+      // Close modal with ESC key
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !videoModal.classList.contains("hidden")) {
+          videoModal.classList.add("hidden");
+          videoPlayer.pause();
+          videoPlayer.currentTime = 0;
+          document.body.style.overflow = "auto";
+        }
+      });
+    </script>
+  </body>
+</html>
